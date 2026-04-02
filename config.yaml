@@ -1,0 +1,329 @@
+run_name: multitask_train
+seed: 6198
+epoch: null
+dry_run: false
+model:
+  d_model: 3584
+  n_heads: 28
+  n_kv_heads: 4
+  qkv_bias: true
+  clip_qkv: null
+  n_layers: 28
+  mlp_ratio: 4
+  mlp_hidden_size: 37888
+  activation_type: swiglu
+  block_type: sequential
+  block_group_size: 1
+  rope: true
+  rope_full_precision: true
+  rope_theta: 1000000.0
+  vision_backbone:
+    image_model_type: siglip
+    image_default_input_size:
+    - 384
+    - 384
+    image_patch_size: 16
+    image_pos_patch_size: 16
+    image_emb_dim: 1152
+    image_num_heads: 16
+    image_num_key_value_heads: 16
+    image_num_layers: 27
+    image_head_dim: 72
+    image_mlp_dim: 4304
+    image_mlp_activations: gelu_pytorch_tanh
+    image_dropout_rate: 0.0
+    image_num_pos: 576
+    image_norm_eps: 1.0e-06
+    attention_dropout: 0.0
+    residual_dropout: 0.0
+    initializer_range: 0.02
+    fsdp_wrap: false
+    resize_mode: siglip
+  vision_backbone2:
+    image_model_type: dino
+    image_default_input_size:
+    - 224
+    - 224
+    image_patch_size: 16
+    image_pos_patch_size: 16
+    image_emb_dim: 1024
+    image_num_heads: 16
+    image_num_key_value_heads: 16
+    image_num_layers: 24
+    image_head_dim: 64
+    image_mlp_dim: 4096
+    image_mlp_activations: gelu
+    image_dropout_rate: 0.0
+    image_num_pos: 785
+    image_norm_eps: 1.0e-05
+    attention_dropout: 0.0
+    residual_dropout: 0.0
+    initializer_range: 0.02
+    fsdp_wrap: false
+    resize_mode: dino
+  vit_load_path: /vast/users/annonymus/Document/molmo_code/data/pretrained_image_encoders/siglip2-so400m-16-384.pt
+  vit_load_path2: /vast/users/annonymus/Document/molmo_code/data/molmo/pretrained_image_encoders/dinov3-large-224.pt
+  llm_load_path: /weka/oe-training-default/mm-olmo/pretrained_llms/qwen2-7b.pt
+  low_cpu_fsdp: true
+  attention_type: sdpa
+  float32_attention: true
+  attention_dropout: 0.0
+  attention_layer_norm: false
+  residual_dropout: 0.1
+  response_residual_dropout: 0.0
+  embedding_dropout: 0.0
+  layer_norm_type: rms
+  layer_norm_with_affine: true
+  layer_norm_eps: 1.0e-06
+  attention_layer_norm_with_affine: true
+  max_sequence_length: 4096
+  max_position_embeddings: null
+  include_bias: false
+  bias_for_layer_norm: null
+  scale_logits: false
+  vocab_size: 152064
+  embedding_size: 152064
+  additional_vocab_size: 128
+  new_embedding_init_range: 0.02
+  weight_tying: false
+  init_device: null
+  init_fn: normal
+  init_std: 0.02
+  init_cutoff_factor: null
+  norm_after: false
+  precision: amp_bf16
+  max_crops: 12
+  crop_mode: overlap-and-resize-c2
+  use_col_tokens: true
+  prompt_type: uber_model
+  system_prompt_kind: demo_or_style
+  message_formatting: role
+  always_start_with_space: true
+  multi_annotation_weighting: root_subsegments
+  default_inference_len: 65
+  overlap_margins:
+  - 4
+  - 4
+  pad_value: 0.0
+  image_padding_embed: pad_and_partial_pad
+  fix_image_padding: true
+  vit_layers:
+  - -1
+  vit_layers2:
+  - -1
+  image_pooling_h: 2
+  image_pooling_w: 2
+  image_pooling_2d: attention_meanq
+  image_projector: mlp
+  image_projector2: mlp
+  image_feature_dropout: 0.0
+  initializer_range: 0.02
+  normalize_input_embeds: false
+  use_position_ids: true
+  head_dim: null
+  tokenizer:
+    identifier: Qwen/Qwen2-7B
+    tokenizer_dir: null
+  pad_tokenizer: true
+  moe_num_experts: 8
+  moe_top_k: 2
+  moe_mlp_impl: sparse
+  moe_log_expert_assignment: false
+  moe_shared_expert: false
+  moe_lbl_in_fp32: false
+  moe_interleave: false
+  moe_loss_weight: 0.1
+  moe_zloss_weight: null
+  moe_dropless: true
+  moe_capacity_factor: 1.25
+allow_resume: true
+ft_llm: true
+ft_vit: true
+ft_vit2: false
+ft_connector: true
+ft_embedding: lm_head
+optimizer:
+  name: adamw
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  betas:
+  - 0.9
+  - 0.95
+  eps: 1.0e-05
+  connector_learning_rate: 1.0e-05
+  vit_learning_rate: 1.0e-05
+  llm_learning_rate: 1.0e-05
+  connector_weight_decay: 0.0
+  vit_weight_decay: 0.0
+  llm_weight_decay: 0.0
+  connector_betas:
+  - 0.9
+  - 0.95
+  vit_betas:
+  - 0.9
+  - 0.95
+  llm_betas:
+  - 0.9
+  - 0.95
+  connector_eps: 1.0e-06
+  vit_eps: 1.0e-06
+  llm_eps: 1.0e-06
+  metrics_log_interval: 20
+scheduler:
+  name: multimodal
+  units: steps
+  t_warmup: 100
+  t_max: null
+  alpha_f: 0.1
+  connector_t_warmup: 200
+  vit_t_warmup: 200
+  llm_t_warmup: 200
+  grad_clip_warmup_steps: null
+  grad_clip_warmup_factor: null
+  warmup_min_lr: 0.0
+data:
+  dataset: null
+  mixture: null
+  root_size_mixture:
+  - rate: 0.6
+    mixture:
+      refcoco: null
+      pixmo_docs_charts: null
+      pixmo_docs_tables: null
+      pixmo_docs_other: null
+      pixmo_docs_diagrams: null
+  - rate: 0.4
+    mixture:
+      pointing_eval: null
+      pixmo_count_counting: null
+      pixmo_points: null
+      pixmo_count: null
+      pixmo_points_counting: null
+  split: train
+  seed: 50189
+  shuffle_messages: true
+  pad: to_max
+  sequence_length: 2304
+  shuffle: true
+  for_inference: false
+  multi_modal: torch
+  num_workers: 2
+  drop_last: true
+  pin_memory: true
+  prefetch_factor: null
+  persistent_workers: false
+  timeout: 0
+restore_dataloader: true
+fast_forward_batches: null
+evaluators: []
+eval_interval: 120000
+inf_eval_interval: 120000
+inf_evaluators:
+- label: pixmo_docs_charts
+  data:
+    dataset: pixmo_docs_charts
+    mixture: null
+    root_size_mixture: null
+    split: validation
+    seed: null
+    shuffle_messages: true
+    pad: to_max
+    sequence_length: 1792
+    shuffle: true
+    for_inference: true
+    multi_modal: torch
+    num_workers: 2
+    drop_last: true
+    pin_memory: true
+    prefetch_factor: null
+    persistent_workers: true
+    timeout: 0
+  device_eval_batch_size: null
+  subset_num_batches: null
+  max_examples: 2048
+  max_new_tokens: 256
+  mm_evaluator:
+    n_to_log: 0
+    num_wandb_examples: 32
+    save_predictions: null
+    save_tokens: false
+    save_full_predictions: false
+    vqa_eval: ansl,em
+    pointing_eval: false
+    count_eval: false
+    point_count_eval: false
+    android_eval: false
+    clock_eval: false
+    clock_bench_eval: false
+    math_vista_eval: false
+  save_dir: null
+  save_to_checkpoint_dir: false
+  eval_name: null
+  skip_if_metrics_cached: true
+save_folder: /vast/users/annonymus/Document/molmo_ckpt/molmo_dual_2_rope/delete1
+remote_save_folder: null
+canceled_check_interval: 50
+save_interval: 300000
+save_interval_unsharded: 1000
+save_interval_ephemeral: null
+save_num_checkpoints_to_keep: 0
+save_num_unsharded_checkpoints_to_keep: 1
+save_overwrite: true
+force_save_unsharded: false
+no_pre_train_checkpoint: true
+initial_model_checkpoint: /vast/users/annonymus/Document/molmo_ckpt/molmo_dual_2_rope/final/step24000-unsharded
+load_model_config: null
+load_path: null
+load_path_sharded_checkpointer: null
+reset_optimizer_state: false
+reset_trainer_state: false
+save_dataloader_state: false
+reset_dataloader_state: false
+sharded_checkpointer: torch_legacy
+max_duration: 10000
+global_train_batch_size: 24
+device_train_batch_size: 3
+device_train_microbatch_size: 3
+device_eval_batch_size: 3
+eval_subset_num_batches: 1
+eval_on_load: false
+device_inf_eval_batch_size: 3
+inf_eval_subset_num_batches: -1
+device_train_grad_accum: 1
+max_grad_norm: 1.0
+multi_component_grad_norm: true
+batch_divisor: global_batch
+max_grad_norm_ratio: null
+precision: amp_bf16
+wandb:
+  project: molmo-1
+  entity: ano
+  group: null
+  name: multitask_train
+  tags:
+  - watching
+  log_artifacts: false
+  rank_zero_only: true
+  log_interval: 20
+speed_monitor:
+  window_size: 20
+  gpu_flops_available: null
+console_log_interval: 20
+gen1_gc_interval: 1
+compile: null
+fsdp:
+  use_orig_params: true
+  sharding_strategy: FULL_SHARD
+  wrapping_strategy: by_block_and_size
+  precision: float
+  hybrid_sharding_num_model_replicas: null
+softmax_auxiliary_loss: true
+softmax_auxiliary_loss_scale: 0.0001
+time_limit: null
+extra_steps_after_cancel: 10
+python_profiling: false
+torch_profiling: false
+stop_at: 10000
+stop_after: null
+activation_checkpointing: whole_layer
+fused_loss: null
