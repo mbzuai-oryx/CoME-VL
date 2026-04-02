@@ -154,8 +154,9 @@ If you find CoME-VL useful in your research, please consider citing:
   year={2026}
 }
 ```
-
 ---
+## Star History Chart
+[![Star History Chart](https://api.star-history.com/svg?repos=mbzuai-oryx/CoME-VL&type=date&legend=top-left)](https://www.star-history.com/#mbzuai-oryx/CoME-VL&type=date&legend=top-left)
 
 ## Acknowledgements
 
