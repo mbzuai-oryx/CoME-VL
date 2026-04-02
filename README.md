@@ -2,20 +2,22 @@
   <h1>CoME-VL: Scaling Complementary Multi-Encoder Vision-Language</h1>
 </div>
 <p align="center">
-  <a href="https://github.com/ankan8145/COME-VL">
+  <a href="https://github.com/mbzuai-oryx/CoME-VL">
     <img alt="GitHub" src="https://img.shields.io/badge/GitHub-CoME--VL-black?logo=github">
   </a>
   <a href="https://arxiv.org/abs/XXXX.XXXXX">
     <img alt="Paper" src="https://img.shields.io/badge/arxiv-XXXX.XXXXX-blue">
   </a>
-  <a href="https://ankan8145.github.io/COME-VL">
+  <a href="https://mbzuai-oryx.github.io/CoME-VL/">
     <img alt="Project Page" src="https://img.shields.io/badge/Project-Page-green">
+  </a>
+  <a href="https://huggingface.co/MBZUAI/CoME-VL">
+    <img alt="HuggingFace" src="https://img.shields.io/badge/🤗%20HuggingFace-CoME--VL-yellow">
   </a>
 </p>
 <div align="center">
   <img src="assets/teaser_fig.png" alt="CoME-VL Teaser" width="800"/>
 </div>
-
 ---
 
 ## Overview
@@ -139,9 +141,22 @@ python3 scripts/convert_hf_to_molmo.py openai
 ```
 
 ---
+---
+
+## Citation
+
+If you find CoME-VL useful in your research, please consider citing:
+```bibtex
+@article{comevl2026,
+  title={CoME-VL: Scaling Complementary Multi-Encoder Vision-Language},
+  author={Deria, Ankan and Kumar, Komal and He, Xilin and Razzak, Imran and Cholakkal, Hisham and Khan, Fahad Shahbaz and Khan, Salman},
+  journal={arXiv preprint},
+  year={2026}
+}
+```
+
+---
 
 ## Acknowledgements
 
 This codebase is built on top of **[Molmo](https://github.com/allenai/molmo)** by the Allen Institute for AI (Ai2). We thank the Ai2 team for open-sourcing their work.
-
-
