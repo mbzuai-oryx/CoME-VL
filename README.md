@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>CoME-VL: Scaling Complementary Multi-Encoder Vision-Language</h1>
+  <h1>CoME-VL: Scaling Complementary Multi-Encoder Vision-Language Learning</h1>
 </div>
 <p align="center">
   <a href="https://github.com/mbzuai-oryx/CoME-VL">
