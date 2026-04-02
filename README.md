@@ -126,7 +126,7 @@ python3 scripts/download.py all --n_proc 12
 Download a specific dataset:
 
 ```bash
-python3 scripts/download_data.py ChartQa --n_proc 12
+python3 scripts/download_data.py pixmo_count_counting --n_proc 12
 ```
 
 ---
