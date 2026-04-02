@@ -56,7 +56,7 @@ export HF_HOME=/path/to/huggingface/cache
 
 ---
 
-## Training / Fine-tuning
+## Training
 
 Fine-tune starting from a pretrained checkpoint:
 
