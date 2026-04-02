@@ -148,7 +148,7 @@ python3 scripts/convert_hf_to_molmo.py openai
 If you find CoME-VL useful in your research, please consider citing:
 ```bibtex
 @article{comevl2026,
-  title={CoME-VL: Scaling Complementary Multi-Encoder Vision-Language},
+  title={CoME-VL: Scaling Complementary Multi-Encoder Vision-Language Learning},
   author={Deria, Ankan and Kumar, Komal and He, Xilin and Razzak, Imran and Cholakkal, Hisham and Khan, Fahad Shahbaz and Khan, Salman},
   journal={arXiv preprint},
   year={2026}
