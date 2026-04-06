@@ -5,7 +5,7 @@
   <a href="https://github.com/mbzuai-oryx/CoME-VL">
     <img alt="GitHub" src="https://img.shields.io/badge/GitHub-CoME--VL-black?logo=github">
   </a>
-  <a href="https://arxiv.org/abs/XXXX.XXXXX">
+  <a href="https://arxiv.org/abs/2604.03231">
     <img alt="Paper" src="https://img.shields.io/badge/arxiv-XXXX.XXXXX-blue">
   </a>
   <a href="https://mbzuai-oryx.github.io/CoME-VL/">
