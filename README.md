@@ -6,7 +6,7 @@
     <img alt="GitHub" src="https://img.shields.io/badge/GitHub-CoME--VL-black?logo=github">
   </a>
   <a href="https://arxiv.org/abs/2604.03231">
-    <img alt="Paper" src="https://img.shields.io/badge/arxiv-XXXX.XXXXX-blue">
+    <img alt="Paper" src="https://img.shields.io/badge/arxiv-2604.03231-blue">
   </a>
   <a href="https://mbzuai-oryx.github.io/CoME-VL/">
     <img alt="Project Page" src="https://img.shields.io/badge/Project-Page-green">
