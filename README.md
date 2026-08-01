@@ -1,6 +1,11 @@
 <div align="center">
   <h1>CoME-VL: Scaling Complementary Multi-Encoder Vision-Language Learning</h1>
 </div>
+
+<p align="center">
+    <img src="https://i.imgur.com/waxVImv.png" alt="Oryx Video-ChatGPT">
+</p>
+
 <p align="center">
   <a href="https://github.com/mbzuai-oryx/CoME-VL">
     <img alt="GitHub" src="https://img.shields.io/badge/GitHub-CoME--VL-black?logo=github">
@@ -19,9 +24,6 @@
   <img src="assets/teaser_fig.png" alt="CoME-VL Teaser" width="800"/>
 </div>
 
-<p align="center">
-    <img src="https://i.imgur.com/waxVImv.png" alt="">
-</p>
 ---
 
 ## Overview
