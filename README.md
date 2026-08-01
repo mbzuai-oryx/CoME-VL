@@ -18,6 +18,10 @@
 <div align="center">
   <img src="assets/teaser_fig.png" alt="CoME-VL Teaser" width="800"/>
 </div>
+
+<p align="center">
+    <img src="https://i.imgur.com/waxVImv.png" alt="">
+</p>
 ---
 
 ## Overview
