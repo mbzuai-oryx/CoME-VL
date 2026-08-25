@@ -3,23 +3,31 @@
 </div>
 
 <p align="center">
-    <img src="https://i.imgur.com/waxVImv.png" alt="Oryx Video-ChatGPT">
+  <img src="https://i.imgur.com/waxVImv.png" alt="Oryx Video-ChatGPT">
 </p>
 
 <p align="center">
   <a href="https://github.com/mbzuai-oryx/CoME-VL">
     <img alt="GitHub" src="https://img.shields.io/badge/GitHub-CoME--VL-black?logo=github">
   </a>
+  
   <a href="https://arxiv.org/abs/2604.03231">
     <img alt="Paper" src="https://img.shields.io/badge/arxiv-2604.03231-blue">
   </a>
+
   <a href="https://mbzuai-oryx.github.io/CoME-VL/">
     <img alt="Project Page" src="https://img.shields.io/badge/Project-Page-green">
   </a>
+
   <a href="https://huggingface.co/MBZUAI/CoME-VL">
     <img alt="HuggingFace" src="https://img.shields.io/badge/🤗%20HuggingFace-CoME--VL-yellow">
   </a>
+
+<a href="https://paperswithcode.co/benchmark/refcoco?task=image-understanding&eval=20805">
+  <img alt="Papers with Code" src="https://img.shields.io/badge/Papers%20with%20Code-%233%20on%20RefCOCO-blue">
+</a>
 </p>
+
 <div align="center">
   <img src="assets/teaser_fig.png" alt="CoME-VL Teaser" width="800"/>
 </div>
